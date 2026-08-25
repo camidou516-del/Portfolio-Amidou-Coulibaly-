@@ -636,38 +636,73 @@ footer {
     }
 }
 
-/* Alignement du bloc de droite sur mobile */
-.nav-right {
+/* --- ALIGNEMENT DESKTOP (Écran large) --- */
+.navbar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 15px;
 }
 
+.desktop-cta {
+    display: inline-block; /* Bouton affiché à droite sur ordinateur */
+}
+
+.nav-right-mobile,
 .mobile-only-btn {
-    display: none;
+    display: none; /* Masqué sur ordinateur */
 }
 
-/* Style pour mobile (max 900px) */
+/* --- RESPONSIVE MOBILE (<= 900px) --- */
 @media (max-width: 900px) {
-    .navbar {
-        padding: 12px 5%;
+    .desktop-cta {
+        display: none; /* Masque le bouton desktop sur mobile */
     }
 
-    /* Redimensionnement propre du bouton d'en-tête sur mobile */
-    .header-cta {
+    .nav-right-mobile {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .mobile-header-cta {
         padding: 8px 14px;
-        font-size: 0.85rem;
+        font-size: 0.82rem;
     }
 
-    /* Bouton dans le menu déroulant */
+    .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        color: var(--accent-gold);
+        cursor: pointer;
+    }
+
     .mobile-only-btn {
         display: block;
         margin-top: 10px;
     }
 
-    .mobile-only-btn .btn-primary {
-        display: inline-block;
-        padding: 10px 24px;
-        font-size: 0.95rem;
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 17, 21, 0.98);
+        backdrop-filter: blur(10px);
+        padding: 20px 0;
+        gap: 20px;
+        text-align: center;
+        border-bottom: 1px solid var(--border-color);
+        transform: translateY(-150%);
+        opacity: 0;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+        pointer-events: none;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
     }
 }
