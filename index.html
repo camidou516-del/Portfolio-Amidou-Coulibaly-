@@ -14,7 +14,7 @@
 
     <!-- NAV BAR -->
     <nav class="navbar">
-        <div class="logo">AMIDOU<span>.C</span></div>
+        <div class="logo">Amidou<span> COULIBALY</span></div>
         <ul class="nav-links">
             <li><a href="#hero" class="active">Accueil</a></li>
             <li><a href="#about">À propos</a></li>
@@ -49,7 +49,7 @@
                 <img src="assets/Imagephotopersonnel.png" alt="Amidou Coulibaly" id="profile-img">
             </div>
             <div class="stats-badge badge-1">
-                <h3>3+</h3>
+                <h3>3</h3>
                 <p>Années d'Études MIO</p>
             </div>
             <div class="stats-badge badge-2">
@@ -349,24 +349,30 @@
                     <i class="fas fa-language"></i>
                     <div>
                         <span>Langues</span>
-                        <p>Français (Courant), Wolof (Courant), Anglais (Notion)</p>
+                        <p>Français , Anglais</p>
                     </div>
                 </div>
             </div>
 
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <input type="text" placeholder="Votre Nom complet" required>
-                    <input type="email" placeholder="Votre Adresse Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" placeholder="Sujet" required>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Votre Message..." rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn-primary w-100">Envoyer le message <i class="fas fa-paper-plane"></i></button>
-            </form>
+            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+    <!-- Remplacez VOTRE_CLE_API_ICI par la clé reçue par email -->
+    <input type="hidden" name="access_key" value="dc9e2539-f6bb-4ded-b063-657f4c3e1b3a">
+    
+    <!-- Optionnel : Redirection après envoi ou sujet personnalisé -->
+    <input type="hidden" name="from_name" value="Portfolio - Formulaire de contact">
+
+    <div class="form-group">
+        <input type="text" name="name" placeholder="Votre Nom complet" required>
+        <input type="email" name="email" placeholder="Votre Adresse Email" required>
+    </div>
+    <div class="form-group">
+        <input type="text" name="subject" placeholder="Sujet" required>
+    </div>
+    <div class="form-group">
+        <textarea name="message" placeholder="Votre Message..." rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn-primary w-100">Envoyer le message <i class="fas fa-paper-plane"></i></button>
+</form>
         </div>
     </section>
 
