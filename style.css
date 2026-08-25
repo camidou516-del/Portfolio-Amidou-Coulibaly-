@@ -635,3 +635,39 @@ footer {
         pointer-events: auto;
     }
 }
+
+/* Alignement du bloc de droite sur mobile */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.mobile-only-btn {
+    display: none;
+}
+
+/* Style pour mobile (max 900px) */
+@media (max-width: 900px) {
+    .navbar {
+        padding: 12px 5%;
+    }
+
+    /* Redimensionnement propre du bouton d'en-tête sur mobile */
+    .header-cta {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+
+    /* Bouton dans le menu déroulant */
+    .mobile-only-btn {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .mobile-only-btn .btn-primary {
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 0.95rem;
+    }
+}

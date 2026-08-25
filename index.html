@@ -12,12 +12,17 @@
 </head>
 <body>
 
-   <nav class="navbar">
+  <nav class="navbar">
     <div class="logo">AMIDOU<span>.C</span></div>
     
-    <!-- Bouton Burger pour Mobile -->
-    <div class="menu-toggle" id="menu-toggle">
-        <i class="fas fa-bars"></i>
+    <div class="nav-right">
+        <!-- Bouton compact visible sur mobile -->
+        <a href="#contact" class="btn-primary btn-sm header-cta">Me contacter <i class="fas fa-paper-plane"></i></a>
+
+        <!-- Bouton Burger -->
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
     </div>
 
     <ul class="nav-links" id="nav-links">
@@ -27,9 +32,11 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#projects">Projets</a></li>
         <li><a href="#education">Parcours</a></li>
+        <!-- Bouton dans le menu déroulant mobile -->
+        <li class="mobile-only-btn">
+            <a href="#contact" class="btn-primary">Me contacter <i class="fas fa-paper-plane"></i></a>
+        </li>
     </ul>
-    
-    <a href="#contact" class="btn-primary btn-sm nav-btn">Me contacter <i class="fas fa-paper-plane"></i></a>
 </nav>
 
     <!-- HERO SECTION -->
