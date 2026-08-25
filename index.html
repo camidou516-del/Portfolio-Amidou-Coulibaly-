@@ -354,12 +354,10 @@
                 </div>
             </div>
 
-            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-    <!-- Remplacez VOTRE_CLE_API_ICI par la clé reçue par email -->
-    <input type="hidden" name="access_key" value="dc9e2539-f6bb-4ded-b063-657f4c3e1b3a">
-    
-    <!-- Optionnel : Redirection après envoi ou sujet personnalisé -->
-    <input type="hidden" name="from_name" value="Portfolio - Formulaire de contact">
+            <form class="contact-form" id="contactForm">
+    <!-- Remplacez par votre clé Web3Forms -->
+    <input type="hidden" name="access_key" value="VOTRE_CLE_API_WEB3FORMS">
+    <input type="hidden" name="from_name" value="Portfolio - Amidou Coulibaly">
 
     <div class="form-group">
         <input type="text" name="name" placeholder="Votre Nom complet" required>
@@ -371,7 +369,12 @@
     <div class="form-group">
         <textarea name="message" placeholder="Votre Message..." rows="5" required></textarea>
     </div>
-    <button type="submit" class="btn-primary w-100">Envoyer le message <i class="fas fa-paper-plane"></i></button>
+    <button type="submit" class="btn-primary w-100" id="submitBtn">
+        Envoyer le message <i class="fas fa-paper-plane"></i>
+    </button>
+    
+    <!-- Zone d'affichage du résultat d'envoi -->
+    <p id="formResult" style="margin-top: 15px; text-align: center; font-weight: 500; display: none;"></p>
 </form>
         </div>
     </section>
