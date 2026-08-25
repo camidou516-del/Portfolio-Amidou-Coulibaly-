@@ -588,3 +588,50 @@ footer {
     }
     .nav-links { display: none; }
 }
+
+/* --- BOUTON BURGER ET RESPONSIVE NAV --- */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .menu-toggle {
+        display: block; /* Affiche les 3 traits sur mobile */
+    }
+
+    .nav-btn {
+        display: none; /* Masque le petit bouton pour faire de la place */
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 17, 21, 0.98);
+        backdrop-filter: blur(10px);
+        padding: 20px 0;
+        gap: 20px;
+        text-align: center;
+        border-bottom: 1px solid var(--border-color);
+        transform: translateY(-150%);
+        opacity: 0;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+        pointer-events: none;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
